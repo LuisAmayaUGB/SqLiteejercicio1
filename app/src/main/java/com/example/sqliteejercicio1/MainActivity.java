@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,5 +43,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.mimenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.verid){
+            intent = new Intent(MainActivity.this,verid.class);
+            startActivity(intent);
+
+            //El código que se ejecutara al hacer click en esa opción
+        }
+
+        if(id==R.id.todos){
+            intent = new Intent(MainActivity.this,DetailsActivity.class);
+            startActivity(intent);
+        }
+
+
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

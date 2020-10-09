@@ -65,6 +65,10 @@ public class adminclase extends SQLiteOpenHelper {
         long newRowId = db.insert(TABLE_Users,null, cValues);
         db.close();
     }
+
+
+
+
     // Get User Details
     public ArrayList<HashMap<String, String>> GetUsers(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -80,6 +84,8 @@ public class adminclase extends SQLiteOpenHelper {
         }
         return  userList;
     }
+
+
     // Get User Details based on userid
     public ArrayList<HashMap<String, String>> GetUserByUserId(int userid){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -95,6 +101,10 @@ public class adminclase extends SQLiteOpenHelper {
         }
         return  userList;
     }
+
+
+
+
     // Delete User Details
     public void DeleteUser(int userid){
         SQLiteDatabase db = this.getWritableDatabase();
